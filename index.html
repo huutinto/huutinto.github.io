@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2E9BEF">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Huu Tin To — AI Marketing Researcher">
-<meta property="og:description" content="Senior Campaign Marketing Specialist researching AI influencers, consumer behavior, and brand relationships.">
-<meta property="og:image" content="images/polaroid-photo.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Huu Tin To — AI Marketing Researcher">
-<meta name="twitter:description" content="Senior Campaign Marketing Specialist researching AI influencers, consumer behavior, and brand relationships.">
 <title>Huu Tin To — Marketing Researcher & Aspiring PhD Candidate</title>
 <meta name="description" content="Huu Tin To — Senior Campaign Marketing Specialist researching AI influencers, consumer behavior, and brand relationships.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -464,12 +457,11 @@
   .t-logo{
     position:absolute;left:0;top:0;width:40px;height:40px;border-radius:12px;
     display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
+    font-family:var(--display);font-weight:800;font-size:.78rem;color:#fff;
     box-shadow:0 6px 16px rgba(20,80,140,.18);border:2px solid #fff;
   }
-  .t-logo.bigo{background:#fff;padding:3px}
-  .t-logo.yan{background:#fff}
-  .t-logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:8px}
+  .t-logo.bigo{background:linear-gradient(135deg,#2E9BEF,#1B5FD0)}
+  .t-logo.yan{background:linear-gradient(135deg,#FF8E6E,#F45B9A)}
   .t-card{
     background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 28px;
     transition:transform .15s ease, box-shadow .15s ease;
@@ -492,7 +484,7 @@
   .t-card ul li+li{margin-top:7px}
   @media(max-width:560px){
     .t-item{padding-left:52px}
-    .t-logo{width:36px;height:36px}
+    .t-logo{width:36px;height:36px;font-size:.7rem}
     .timeline::before{left:17px}
     .t-card{padding:22px 20px}
     .t-head{flex-direction:column;gap:8px}
@@ -798,7 +790,7 @@
     </p>
 
     <div class="hero-cta">
-      <a class="btn btn-white" href="CV.pdf" download="Huu-Tin-To-CV.pdf">Download CV</a>
+      <a class="btn btn-white" href="CV.pdf" download>Download CV</a>
       <a class="btn btn-ghost" href="#contact">Contact Me</a>
     </div>
   </div>
@@ -939,7 +931,7 @@
 
       <div class="timeline">
         <div class="t-item reveal">
-          <span class="t-logo bigo"><img src="images/logo-bigo.png" alt="Bigo Live"></span>
+          <span class="t-logo bigo">VB</span>
           <div class="t-card">
             <div class="t-head">
               <div>
@@ -960,7 +952,7 @@
         </div>
 
         <div class="t-item reveal">
-          <span class="t-logo yan"><img src="images/logo-yan.png" alt="YAN Digital"></span>
+          <span class="t-logo yan">YD</span>
           <div class="t-card">
             <div class="t-head">
               <div>
@@ -1120,43 +1112,6 @@
   </footer>
 
 </main>
-
-<!-- ================= ENVELOPE MODAL ================= -->
-<div class="env-overlay" id="envelope" role="dialog" aria-modal="true" aria-labelledby="envTitle" hidden>
-  <div class="env-stage">
-    <button class="env-close" id="envClose" aria-label="Đóng">✕</button>
-
-    <div class="env-letter">
-      <h3 id="envTitle">Thanks for reaching out! 💌</h3>
-      <p>It genuinely means a lot that you'd like to get in touch. Whether it's about research collaboration, a PhD opportunity, or just a conversation about AI and brands — I'd love to hear from you.</p>
-      <p class="env-sign">Huu Tin</p>
-
-      <div class="env-divider"></div>
-
-      <div class="env-info">
-        <a class="env-row" href="mailto:sooyoshin@gmail.com">
-          <span class="env-ico">✉️</span>
-          <span><b>Email</b><span>sooyoshin@gmail.com</span></span>
-        </a>
-        <a class="env-row" href="tel:+84974672543">
-          <span class="env-ico">📱</span>
-          <span><b>Phone</b><span>(+84) 97-467-2543</span></span>
-        </a>
-        <a class="env-row" href="https://www.linkedin.com/in/huutinto/" target="_blank" rel="noopener">
-          <span class="env-ico">💼</span>
-          <span><b>LinkedIn</b><span>linkedin.com/in/huutinto ↗</span></span>
-        </a>
-        <div class="env-row" style="cursor:default">
-          <span class="env-ico">📍</span>
-          <span><b>Based in</b><span>Ho Chi Minh City, Vietnam</span></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="env-flap" aria-hidden="true"></div>
-    <div class="env-body" aria-hidden="true"></div>
-  </div>
-</div>
 
 <script>
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1344,7 +1299,42 @@
 
 </script>
 
+<!-- ================= ENVELOPE MODAL ================= -->
+<div class="env-overlay" id="envelope" role="dialog" aria-modal="true" aria-labelledby="envTitle" hidden>
+  <div class="env-stage">
+    <button class="env-close" id="envClose" aria-label="Đóng">✕</button>
 
+    <div class="env-letter">
+      <h3 id="envTitle">Thanks for reaching out! 💌</h3>
+      <p>It genuinely means a lot that you'd like to get in touch. Whether it's about research collaboration, a PhD opportunity, or just a conversation about AI and brands — I'd love to hear from you.</p>
+      <p class="env-sign">Huu Tin</p>
+
+      <div class="env-divider"></div>
+
+      <div class="env-info">
+        <a class="env-row" href="mailto:sooyoshin@gmail.com">
+          <span class="env-ico">✉️</span>
+          <span><b>Email</b><span>sooyoshin@gmail.com</span></span>
+        </a>
+        <a class="env-row" href="tel:+84974672543">
+          <span class="env-ico">📱</span>
+          <span><b>Phone</b><span>(+84) 97-467-2543</span></span>
+        </a>
+        <a class="env-row" href="https://www.linkedin.com/in/huutinto/" target="_blank" rel="noopener">
+          <span class="env-ico">💼</span>
+          <span><b>LinkedIn</b><span>linkedin.com/in/huutinto ↗</span></span>
+        </a>
+        <div class="env-row" style="cursor:default">
+          <span class="env-ico">📍</span>
+          <span><b>Based in</b><span>Ho Chi Minh City, Vietnam</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="env-flap" aria-hidden="true"></div>
+    <div class="env-body" aria-hidden="true"></div>
+  </div>
+</div>
 
 </body>
 </html>
