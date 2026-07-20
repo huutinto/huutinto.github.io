@@ -1,6 +1,6 @@
 # Huu Tin To — Portfolio
 
-Trang portfolio cá nhân: https://huutinto.github.io
+Trang portfolio cá nhân: https://sooyoshin.github.io
 
 ---
 
@@ -9,7 +9,7 @@ Trang portfolio cá nhân: https://huutinto.github.io
 ### Bước 1 — Tạo repository
 
 1. Vào https://github.com/new
-2. **Repository name**: gõ chính xác `huutinto.github.io`
+2. **Repository name**: gõ chính xác `sooyoshin.github.io`
    (phải trùng tên tài khoản, nếu không link sẽ dài và xấu hơn)
 3. Chọn **Public**
 4. **KHÔNG** tick "Add a README file" (thư mục này đã có sẵn)
@@ -40,7 +40,7 @@ Trang portfolio cá nhân: https://huutinto.github.io
 3. **Branch**: chọn `main`, thư mục `/ (root)` → bấm **Save**
 4. Đợi 1–2 phút, tải lại trang → sẽ thấy link hiện ra
 
-**Xong!** Web sẽ chạy tại: **https://huutinto.github.io**
+**Xong!** Web sẽ chạy tại: **https://sooyoshin.github.io**
 
 ---
 
