@@ -1,102 +1,90 @@
-# Huu Tin To — Portfolio
+# Seed Publications Program — website
 
-Trang portfolio cá nhân: https://sooyoshin.github.io
+A static site for the Seed Publications Program: a non-profit initiative that
+coaches young Vietnamese scholars through writing and publishing their first international
+review paper.
 
----
+Everything needed to render the page lives in `index.html` — HTML, CSS, JavaScript, and both
+portrait photos embedded as base64. Open it anywhere and it works, with no folder next to it.
+No build step and no dependencies; the only external request is the Google Fonts stylesheet.
 
-## Cách đưa lên mạng (GitHub Pages) — làm 1 lần, ~5 phút
-
-### Bước 1 — Tạo repository
-
-1. Vào https://github.com/new
-2. **Repository name**: gõ chính xác `sooyoshin.github.io`
-   (phải trùng tên tài khoản, nếu không link sẽ dài và xấu hơn)
-3. Chọn **Public**
-4. **KHÔNG** tick "Add a README file" (thư mục này đã có sẵn)
-5. Bấm **Create repository**
-
-### Bước 2 — Tải file lên
-
-1. Ở trang repo vừa tạo, bấm link **"uploading an existing file"**
-   (hoặc vào `Add file` → `Upload files`)
-2. Mở thư mục này trên máy, **chọn hết** rồi kéo thả vào trình duyệt:
-   - `index.html`
-   - `CV.pdf`
-   - `README.md`
-   - `.nojekyll`  ← file này bị ẩn, xem cách hiện bên dưới
-   - cả thư mục `images/`
-3. Bấm **Commit changes**
-
-> **File `.nojekyll` bị ẩn?**
-> - Windows: File Explorer → tab `View` → tick `Hidden items`
-> - macOS: nhấn `Cmd + Shift + .` (dấu chấm)
->
-> File này rỗng nhưng cần thiết — thiếu nó GitHub có thể bỏ qua một số file.
-
-### Bước 3 — Bật GitHub Pages
-
-1. Trong repo → tab **Settings** → menu trái chọn **Pages**
-2. Mục **Source**: chọn `Deploy from a branch`
-3. **Branch**: chọn `main`, thư mục `/ (root)` → bấm **Save**
-4. Đợi 1–2 phút, tải lại trang → sẽ thấy link hiện ra
-
-**Xong!** Web sẽ chạy tại: **https://sooyoshin.github.io**
-
----
-
-## Sau này muốn sửa nội dung
-
-**Sửa chữ:**
-Vào repo → bấm `index.html` → bấm icon cây bút ✏️ → sửa → `Commit changes`.
-Đợi ~1 phút là web tự cập nhật.
-
-**Thay CV mới:**
-Vào repo → bấm `CV.pdf` → nút `...` góc phải → `Upload new version`
-(hoặc xoá file cũ rồi upload file mới, nhớ đặt đúng tên `CV.pdf`).
-
-**Thay ảnh:**
-Vào thư mục `images/` → upload file mới **trùng tên** file cũ để ghi đè.
-
----
-
-## Cấu trúc
+`images/` holds the same three photos as ordinary files. The page does not need them, but they
+are useful as the originals, and `og:image` points at one of them so shared links show a
+thumbnail.
 
 ```
-.
-├── index.html      ← toàn bộ trang (HTML + CSS + JS trong 1 file)
-├── CV.pdf          ← nút "Download CV" trỏ tới file này
-├── .nojekyll       ← file rỗng, bắt buộc cho GitHub Pages
-├── images/         ← 8 ảnh (avatar, minh hoạ, doodle, logo công ty)
-└── README.md
+index.html
+images/
+  an-nguyen.jpg
+  dan-tong.jpg
+  phu-nguyen.jpg
+README.md
 ```
 
-> **Lưu ý:** `index.html` và thư mục `images/` phải luôn nằm cạnh nhau.
+## Put it online with GitHub Pages
 
----
+1. Create a new repository on GitHub (public).
+2. Upload `index.html` and the `images/` folder to the repository root, keeping the folder
+   structure above. Add this `README.md` too if you want.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+5. Set branch to `main` and folder to `/ (root)`, then **Save**.
+6. Wait about a minute. The site appears at `https://<your-username>.github.io/<repo-name>/`.
 
-## Các phần của trang
+To use a custom domain later, add it under **Settings → Pages → Custom domain** and create
+the matching DNS records at your registrar.
 
-1. **Hero** — tên, chức danh, nút Download CV / Contact Me (mở phong bì thư)
-2. **What I do** — tuyên ngôn + 3 số liệu
-3. **Selected Research** — 2 công trình nghiên cứu
-4. **About me** — ảnh polaroid + giới thiệu + chữ ký
-5. **Work Experience** — Bigo Live & YAN Digital
-6. **Education** — MFA I-Shou + BBA Saigon University (kèm thành tích)
-7. **Leadership & International Engagement**
-8. **References** — 2 giáo sư
-9. **Contact** — footer
+## Editing the content
 
----
+| What you want to change | Where to look in `index.html` |
+| --- | --- |
+| Headline, intro paragraph, CTA | `<section ... id="home">` |
+| The four counters | the `#counters` block — edit `data-count` on each `<b>` |
+| Aim of the project (six cards) | `<section ... id="aim">` |
+| Program detail accordion, deadline banner | `<section ... id="program">` |
+| Cohort buttons and their pop-up windows | the `COHORTS` array in `<script>` |
+| Publications, under review, in progress | `<div class="pubs" id="pubs">` — each `<article>` has `data-status="pub \| rev \| prog"` |
+| Program history and name history | `<div class="history-block">` |
+| Team cards and personnel-file data | `<article class="person">` — the `data-file`, `data-role`, `data-field`, `data-status`, `data-since` attributes |
+| FAQ | `<section ... id="faq">` |
+| Colours | the CSS variables at the top: `--seed-cream`, `--seed-gold`, `--seed-orange`, `--seed-crimson`, `--seed-teal` |
 
-## Ghi chú kỹ thuật
+### Adding a cohort
 
-- HTML/CSS/JS thuần, không dùng thư viện ngoài.
-- Font tải từ Google Fonts (cần mạng để hiện đúng font).
-- Responsive: chạy tốt trên điện thoại (iOS/Android) và máy tính.
-- Tôn trọng chế độ "giảm chuyển động" của hệ điều hành.
-- Đã có thẻ Open Graph → link chia sẻ lên Facebook/LinkedIn sẽ hiện ảnh đẹp.
+Add one object to the `COHORTS` array. The button and its pop-up window are generated from
+it, so nothing else needs touching:
 
-## Muốn dùng tên miền riêng?
+```js
+{
+  id:"K8", tone:"c-soon", flag:"var(--hair)", tag:"Coming",
+  title:"K8 — Coming",
+  kicker:"Not yet open",
+  stats:[],
+  text:`<p>K8 is coming. Details will be published here once the cohort is scheduled.</p>`
+}
+```
 
-Nếu sau này mua tên miền (vd `huutinto.com`): Settings → Pages → mục
-**Custom domain** → nhập tên miền → làm theo hướng dẫn trỏ DNS.
+Use `tone:"c-now"` with `flag:"var(--seed-teal)"` for an intake that is currently open, and
+`tone:"c-exp"` with `flag:"var(--seed-cream)"` once it closes.
+
+### Swapping a team photo
+
+Point that person's `<img class="avatar avatar--photo">` at a new file — `src="images/name.jpg"`
+works, as long as the `images/` folder ships with the page. A square image around 420×420 is
+the right size: the existing three are that size, which is why they stay sharp in both the
+round card avatar and the larger personnel-file view.
+
+Note that all three photos are embedded as base64 inside `index.html`, which is why the page
+renders on its own. If you replace them with file paths, `index.html` and `images/` must
+then travel together.
+
+## Notes
+
+- The counters show the K1–K4 tally as of 10 August 2026: 103 awardees, 64 topics, 15
+  manuscripts in progress, 3 under review, 3 published. Edit `data-count` on each `<b>` in
+  the `#counters` block to update them.
+- The Publications section lists individual papers, so its tab counts are smaller than the
+  counters: only the 2 PROSPERO-registered manuscripts appear under "In progress" out of the
+  15 in the tally.
+- The application deadline is shown as expired. When a new intake opens, edit the banner in
+  the Program detail section and the "How to apply" accordion item.
